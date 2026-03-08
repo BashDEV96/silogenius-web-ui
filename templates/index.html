@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SiloGenius</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+
+    <!-- Logo / Brand -->
+    <div class="sidebar-brand">
+        <div class="brand-icon">⚙️</div>
+        <span class="brand-text">SiloGenius</span>
+    </div>
+
+    <!-- Hamburger -->
+    <button class="hamburger" id="hamburger" title="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Nav -->
+    <nav class="sidebar-nav">
+
+        <div class="nav-section-label">Tools</div>
+
+        <a href="#" class="nav-item active" data-page="silo">
+            <span class="nav-icon">🗂️</span>
+            <span class="nav-text">Silo Generator</span>
+        </a>
+        <a href="#" class="nav-item" data-page="articles">
+            <span class="nav-icon">✍️</span>
+            <span class="nav-text">Article Writer</span>
+        </a>
+        <a href="#" class="nav-item" data-page="media">
+            <span class="nav-icon">🖼️</span>
+            <span class="nav-text">Media</span>
+        </a>
+        <a href="#" class="nav-item" data-page="publisher">
+            <span class="nav-icon">🚀</span>
+            <span class="nav-text">Publisher</span>
+        </a>
+
+        <div class="nav-section-label">Projects</div>
+
+        <a href="#" class="nav-item" data-page="projects">
+            <span class="nav-icon">📁</span>
+            <span class="nav-text">My Projects</span>
+        </a>
+
+    </nav>
+
+    <!-- Settings at bottom -->
+    <div class="sidebar-footer">
+        <a href="#" class="nav-item" data-page="settings">
+            <span class="nav-icon">⚙️</span>
+            <span class="nav-text">Settings</span>
+        </a>
+    </div>
+
+</aside>
+
+<!-- MAIN WRAPPER -->
+<div class="main-wrapper" id="mainWrapper">
+
+    <!-- HEADER -->
+    <header class="topbar">
+        <div class="topbar-left">
+            <span class="topbar-title">Silo Generator</span>
+        </div>
+        <div class="topbar-right">
+            <a href="https://x.com" target="_blank" class="social-btn" title="Share on X">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.261 5.636 5.903-5.636zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" class="social-btn" title="Share on Facebook">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://reddit.com" target="_blank" class="social-btn" title="Share on Reddit">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+            </a>
+        </div>
+    </header>
+
+    <!-- WORK AREA -->
+    <main class="work-area" id="workArea">
+
+        <!-- SILO GENERATOR PAGE -->
+        <div class="page active" id="page-silo">
+            <div class="page-header">
+                <h1 class="page-title">Silo Generator</h1>
+                <p class="page-subtitle">Generate a complete content silo from a single keyword</p>
+            </div>
+
+            <div class="card">
+                <div class="form-row">
+                    <div class="form-group flex-1">
+                        <label class="form-label">Keyword</label>
+                        <input type="text" class="form-input" id="keyword" placeholder="e.g. Home Coffee Brewing" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Total Passes</label>
+                    <div class="pill-group" id="passSelector">
+                        <button class="pill active" data-value="1">1 Pass</button>
+                        <button class="pill" data-value="2">2 Passes</button>
+                        <button class="pill" data-value="3">3 Passes</button>
+                        <button class="pill" data-value="4">4 Passes</button>
+                        <button class="pill" data-value="5">5 Passes</button>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+    <button class="btn-primary" id="generateBtn">
+        <span>Generate Silo</span>
+    </button>
+    <button class="btn-secondary" id="loadCsvBtn">📂 Load CSV</button>
+    <input type="file" id="csvFileInput" accept=".csv" style="display:none;">
+</div>
+            </div>
+
+            <!-- Results Table -->
+            <div class="card" id="resultsCard" style="display:none;">
+                <div class="table-header">
+                    <span class="table-count" id="tableCount">0 articles</span>
+                    <div class="table-actions">
+                        <input type="file" id="csvFileInput" accept=".csv" style="display:none;">
+                        <button class="btn-secondary" id="addRowBtn">+ Add Row</button>
+                        <button class="btn-primary" id="exportBtn">⬇️ Export CSV</button>
+                    </div>
+                </div>
+                <div class="table-wrapper">
+                    <table class="silo-table" id="siloTable">
+                        <thead>
+                            <tr id="tableHeaders"></tr>
+                        </thead>
+                        <tbody id="tableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- PLACEHOLDER PAGES -->
+
+        <div class="page" id="page-articles">
+    <div class="page-header">
+        <h1 class="page-title">Article Writer</h1>
+        <p class="page-subtitle">Generate outlines and write articles from your silo CSV</p>
+    </div>
+
+    <!-- Load CSV -->
+    <div class="card">
+        <div class="form-actions">
+            <button class="btn-secondary" id="loadArticleCsvBtn">📂 Load Silo CSV</button>
+            <input type="file" id="articleCsvInput" accept=".csv" style="display:none;">
+            <span class="csv-loaded-name" id="csvLoadedName"></span>
+        </div>
+    </div>
+
+    <!-- Article List -->
+    <div class="card" id="articleListCard" style="display:none;">
+        <div class="article-list-header">
+            <label class="checkbox-label">
+                <input type="checkbox" id="selectAllArticles">
+                <span>Select All</span>
+            </label>
+            <span class="table-count" id="articleCount">0 articles</span>
+        </div>
+
+        <div class="article-list" id="articleList"></div>
+
+        <!-- Actions -->
+        <div class="article-actions">
+            <button class="btn-secondary" id="genOutlinesBtn">📋 Generate Outlines</button>
+            <button class="btn-secondary" id="writeArticlesBtn">✍️ Write Articles</button>
+            <button class="btn-primary" id="fullPipelineBtn">🚀 Full Pipeline</button>
+        </div>
+    </div>
+
+    <!-- Progress Log -->
+    <div class="card" id="progressCard" style="display:none;">
+        <h2 class="card-title">Progress</h2>
+        <div class="progress-bar-wrapper">
+            <div class="progress-bar" id="progressBar" style="width:0%"></div>
+        </div>
+        <div class="progress-log" id="progressLog"></div>
+    </div>
+</div>
+
+        <div class="page" id="page-media">
+    <div class="page-header">
+        <h1 class="page-title">Media</h1>
+        <p class="page-subtitle">Generate and upload AI images for your articles</p>
+    </div>
+
+    <!-- Image Settings -->
+    <div class="card">
+        <h2 class="card-title">Image Settings</h2>
+
+        <!-- Model display -->
+        <div class="form-group">
+            <label class="form-label">AI Image Model</label>
+            <div class="model-display" id="imageModelDisplay">— set in Settings —</div>
+        </div>
+
+        <!-- Image Sizes -->
+        <div class="form-row">
+            <div class="form-group flex-1">
+                <label class="form-label">Featured Image Size</label>
+                <select class="form-select" id="featuredSize">
+                    <option value="1344x768">1344×768 (16:9) — default</option>
+                    <option value="1280x704">1280×704 (20:11)</option>
+                    <option value="1152x768">1152×768 (3:2)</option>
+                    <option value="1024x768">1024×768 (4:3)</option>
+                    <option value="1024x640">1024×640 (8:5)</option>
+                    <option value="960x768">960×768 (5:4)</option>
+                    <option value="1024x1024">1024×1024 (1:1)</option>
+                    <option value="768x1344">768×1344 (9:16)</option>
+                </select>
+            </div>
+            <div class="form-group flex-1">
+                <label class="form-label">Inline Image Size</label>
+                <select class="form-select" id="inlineSize">
+                    <option value="1344x768">1344×768 (16:9) — default</option>
+                    <option value="1280x704">1280×704 (20:11)</option>
+                    <option value="1152x768">1152×768 (3:2)</option>
+                    <option value="1024x768">1024×768 (4:3)</option>
+                    <option value="1024x640">1024×640 (8:5)</option>
+                    <option value="960x768">960×768 (5:4)</option>
+                    <option value="1024x1024">1024×1024 (1:1)</option>
+                    <option value="768x1344">768×1344 (9:16)</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Image Style -->
+        <div class="form-group">
+            <label class="form-label">Image Style</label>
+            <div class="style-input-row">
+                <select class="form-select" id="imageStyle">
+                    <option value="None">None — default</option>
+                    <option value="Photo Realistic">Photo Realistic</option>
+                    <option value="Cartoon">Cartoon</option>
+                    <option value="Cubism">Cubism</option>
+                    <option value="Expressionism">Expressionism</option>
+                    <option value="Cyberpunk">Cyberpunk</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="Cinematic">Cinematic</option>
+                    <option value="Abstract">Abstract</option>
+                    <option value="Impressionism">Impressionism</option>
+                    <option value="Surrealism">Surrealism</option>
+                    <option value="Anime">Anime</option>
+                    <option value="Comic Book">Comic Book</option>
+                </select>
+                <input type="text" class="form-input" id="customStyle" placeholder="Or type a custom style..." />
+            </div>
+        </div>
+
+        <!-- Additional Instructions + Brand -->
+        <div class="form-row">
+            <div class="form-group flex-1">
+                <label class="form-label">Additional Instructions <span class="form-hint">appended to every prompt</span></label>
+                <input type="text" class="form-input" id="additionalInstructions" placeholder="e.g. on side of volcano, rainy day background..." />
+            </div>
+            <div class="form-group flex-1">
+                <label class="form-label">Brand Name <span class="form-hint">optional</span></label>
+                <input type="text" class="form-input" id="brandName" placeholder="e.g. Minecraft Mini Servers LLC" />
+            </div>
+        </div>
+
+        <!-- Alt Text Options -->
+        <div class="form-group">
+            <label class="form-label">Alt Text</label>
+            <div class="checkbox-group">
+                <label class="checkbox-label">
+                    <input type="radio" name="altMode" value="keyword" checked>
+                    <span>Use main keyword for first image, NLP keywords for rest</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="radio" name="altMode" value="descriptive">
+                    <span>Generate descriptive SEO alt text from image content</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Layout Options -->
+        <div class="form-group">
+            <label class="form-label">Inline Image Layout</label>
+            <div class="pill-group" id="layoutSelector">
+                <button class="pill" data-value="every">Every H2</button>
+                <button class="pill active" data-value="every2">Every 2nd H2</button>
+                <button class="pill" data-value="every3">Every 3rd H2</button>
+            </div>
+            <p class="form-hint" style="margin-top:6px">Images are never placed under the first H2</p>
+        </div>
+
+        <!-- Prompt Preview -->
+        <div class="form-group">
+            <label class="form-label">Prompt Preview</label>
+            <div class="prompt-preview" id="promptPreview">— load a CSV to see prompt preview —</div>
+        </div>
+    </div>
+
+    <!-- Article Selection -->
+    <div class="card">
+        <div class="form-actions" style="margin-bottom:16px">
+            <button class="btn-secondary" id="loadMediaCsvBtn">📂 Load Silo CSV</button>
+            <input type="file" id="mediaCsvInput" accept=".csv" style="display:none;">
+            <span class="csv-loaded-name" id="mediaCsvName"></span>
+        </div>
+
+        <div id="mediaArticleListWrapper" style="display:none;">
+            <div class="article-list-header">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="selectAllMedia">
+                    <span>Select All With Drafts</span>
+                </label>
+                <span class="table-count" id="mediaArticleCount">0 articles</span>
+            </div>
+            <div class="article-list" id="mediaArticleList"></div>
+
+            <div class="article-actions">
+                <button class="btn-primary" id="processMediaBtn">🖼️ Process Selected</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Progress -->
+    <div class="card" id="mediaProgressCard" style="display:none;">
+        <h2 class="card-title">Media Progress</h2>
+        <div class="progress-bar-wrapper">
+            <div class="progress-bar" id="mediaProgressBar" style="width:0%"></div>
+        </div>
+        <div class="progress-log" id="mediaProgressLog"></div>
+    </div>
+</div>
+
+        <div class="page" id="page-publisher">
+    <div class="page-header">
+        <h1 class="page-title">Publisher</h1>
+        <p class="page-subtitle">Publish your articles to WordPress</p>
+    </div>
+
+    <!-- Load CSV -->
+    <div class="card">
+        <div class="form-actions">
+            <button class="btn-secondary" id="loadPublisherCsvBtn">📂 Load Silo CSV</button>
+            <input type="file" id="publisherCsvInput" accept=".csv" style="display:none;">
+            <span class="csv-loaded-name" id="publisherCsvName"></span>
+        </div>
+    </div>
+
+    <!-- Article List -->
+    <div class="card" id="publisherListCard" style="display:none;">
+        <div class="article-list-header">
+            <label class="checkbox-label">
+                <input type="checkbox" id="selectAllPublisher">
+                <span>Select All Ready</span>
+            </label>
+            <span class="table-count" id="publisherCount">0 articles</span>
+        </div>
+
+        <div class="article-list" id="publisherList"></div>
+
+        <!-- Publish Actions -->
+        <div class="article-actions">
+            <div class="form-group" style="margin:0">
+                <label class="form-label" style="margin-bottom:6px">Publish As</label>
+                <div class="pill-group" id="publishStatusSelector">
+                    <button class="pill active" data-value="draft">Draft</button>
+                    <button class="pill" data-value="publish">Live</button>
+                </div>
+            </div>
+            <button class="btn-primary" id="publishBtn" style="margin-left:auto">🚀 Publish Selected</button>
+        </div>
+    </div>
+
+    <!-- Progress -->
+    <div class="card" id="publisherProgressCard" style="display:none;">
+        <h2 class="card-title">Publishing Progress</h2>
+        <div class="progress-bar-wrapper">
+            <div class="progress-bar" id="publisherProgressBar" style="width:0%"></div>
+        </div>
+        <div class="progress-log" id="publisherProgressLog"></div>
+    </div>
+</div>
+
+<div class="page" id="page-projects">
+    <div class="page-header">
+        <h1 class="page-title">My Projects</h1>
+        <p class="page-subtitle">Your saved content silos</p>
+    </div>
+
+    <div class="projects-toolbar">
+        <button class="btn-secondary" id="refreshProjectsBtn">🔄 Refresh</button>
+        <span class="projects-hint">CSV files are saved in ~/silogenius/silos/</span>
+    </div>
+
+    <div id="projectsGrid" class="projects-grid">
+        <div class="projects-loading">Loading projects...</div>
+    </div>
+</div>
+
+        <div class="page" id="page-settings">
+    <div class="page-header">
+        <h1 class="page-title">Settings</h1>
+        <p class="page-subtitle">Configure your AI providers, models and WordPress connection</p>
+    </div>
+
+    <!-- AI Providers -->
+    <div class="card">
+        <h2 class="card-title">AI Providers</h2>
+        <p class="card-description">Select a provider, enter your API key and retrieve available models</p>
+
+        <!-- Provider Selector -->
+        <div class="form-group">
+            <label class="form-label">Provider</label>
+            <div class="pill-group" id="providerSelector">
+                <button class="pill active" data-provider="openrouter">OpenRouter</button>
+                <button class="pill" data-provider="anthropic">Anthropic</button>
+                <button class="pill" data-provider="openai">OpenAI</button>
+                <button class="pill" data-provider="google">Google</button>
+            </div>
+        </div>
+
+        <!-- API Key -->
+        <div class="form-group">
+            <label class="form-label" id="apiKeyLabel">OpenRouter API Key</label>
+            <div class="input-row">
+                <input type="password" class="form-input" id="currentApiKey" placeholder="Enter your API key" />
+                <button class="btn-secondary" id="retrieveModelsBtn">🔍 Retrieve Models</button>
+            </div>
+        </div>
+
+        <!-- Model Selectors -->
+        <div class="form-row">
+            <div class="form-group flex-1">
+                <label class="form-label">Silo Generator Model</label>
+                <select class="form-select" id="siloModel">
+                    <option value="">— retrieve models first —</option>
+                </select>
+            </div>
+            <div class="form-group flex-1">
+                <label class="form-label">Article Writer Model</label>
+                <select class="form-select" id="articleModel">
+                    <option value="">— retrieve models first —</option>
+                </select>
+            </div>
+            <div class="form-group flex-1">
+                <label class="form-label">Image Generator Model</label>
+                <select class="form-select" id="imageModel">
+                    <option value="">— retrieve models first —</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- WordPress -->
+    <div class="card">
+        <h2 class="card-title">WordPress</h2>
+        <p class="card-description">Connect to your WordPress site using an application password</p>
+
+        <div class="form-row">
+            <div class="form-group flex-1">
+                <label class="form-label">Site URL</label>
+                <input type="text" class="form-input" id="wpUrl" placeholder="http://yoursite.com/wordpress" />
+            </div>
+            <div class="form-group flex-1">
+                <label class="form-label">Username</label>
+                <input type="text" class="form-input" id="wpUsername" placeholder="admin" />
+            </div>
+            <div class="form-group flex-1">
+                <label class="form-label">Application Password</label>
+                <input type="password" class="form-input" id="wpPassword" placeholder="xxxx xxxx xxxx xxxx" />
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button class="btn-secondary" id="testWpBtn">🔌 Test Connection</button>
+            <span class="connection-status" id="wpStatus"></span>
+        </div>
+    </div>
+
+    <!-- Save Button -->
+    <div class="form-actions">
+        <button class="btn-primary" id="saveSettingsBtn">💾 Save Settings</button>
+        <span class="save-status" id="saveStatus"></span>
+    </div>
+</div>
+
+    </main>
+</div>
+
+<script src="/static/js/app.js"></script>
+</body>
+</html>
